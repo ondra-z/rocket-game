@@ -30,6 +30,11 @@ const s = ( sketch ) => {
     imgRocket =  sketch.loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eb66b615304579022b97f_G_Rocket.svg');
     imgRocketFire = sketch.loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eb66cf5bcfa650326fa68_G_Rocket_fire.svg');
     imgColumn = sketch.loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eb8d503bfba83741b7337_Column.png')
+    
+    imgPlanet = sketch.loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eceb5970227174a28ac8f_Cloud.svg');
+    imgAsteroids = sketch.loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eceb5970227174a28ac8f_Cloud.svg');
+    imgBtmEllipse = sketch.loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625ecd6846551d10f20fac16_Bottom_Ellipse.svg');
+    imgCloud = sketch.loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eceb5970227174a28ac8f_Cloud.svg');
   }
   sketch.setup = () => {//----------------SETUP-----------------------------
     
@@ -112,6 +117,12 @@ const s = ( sketch ) => {
     for(var i=0; i <3; i++){
       colYcor[i] = sketch.random(margin, sketch.height - gap - margin);
     }
+  }
+  function drawBackground(){
+    for(var i=0; i <3; i++){
+      sketch.image(imgCloud, colXcor[i]+100, 500, 80, 30);
+    }
+    
   }
   function drawColumns(){
     for(var i=0; i <3; i++){
@@ -199,6 +210,7 @@ const s = ( sketch ) => {
   sketch.draw = () => {
     sketch.background("#B7C8CC");
     setGradient(0, 0, sketch.width , sketch.height, b1, b2, Y_AXIS);
+    drawBackground();
     drawColumns();
     
     //-------------------------------GAME MODE 2 = before startinh ----------------------------
