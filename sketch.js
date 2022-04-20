@@ -217,11 +217,13 @@ draw = () => {
   
   //-------------------------------GAME MODE 2 = before startinh ----------------------------
   if(gameMode == 2){
+    fill(255);
     textAlign(CENTER);
+    textStyle(BOLD);
     textSize(30);
     text("Rocket Game by Ondrej Zajic", width/2, height/2-10);
     textSize(16);
-    text("Press SPACE to restart the game", width/2, height/2 + 30);
+    text("Press SPACE to play the game", width/2, height/2 + 30);
   //-------------------------------GAME MODE 1 = playing----------------------------
   } else if(gameMode == 1){
     

@@ -7,8 +7,8 @@ preload = () => {
 }
 
 //ellipse variables
-let ellipseMinWidth = 150;
-let ellipseMaxWidth = 450;
+let ellipseMinWidth = 350;
+let ellipseMaxWidth = 550;
 
 
 let ellipseArea = (1000+2*resetZone)/8;

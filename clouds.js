@@ -38,7 +38,7 @@ class Cloud {
     this.width = random(cloudMinWidth, cloudMaxWidth);
     this.height = this.width/3;
 
-    this.y = random(200,400);
+    this.y = random(250,400);
   }
 
   display(){
