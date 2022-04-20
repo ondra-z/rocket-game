@@ -57,8 +57,8 @@ function setup() {//----------------SETUP-----------------------------
   columnSpeed = 4;
 
   //gradient
-  b1 = color(0);
-  b2 = color(255);
+  b1 = color(32,106,129);
+  b2 = color(29,2,74);
 
   //game proportions
   gap = 150;//gap opening in column
