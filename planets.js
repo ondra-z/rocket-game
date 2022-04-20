@@ -1,7 +1,7 @@
 //planet objects
 let planetNum = 4;
 let planets = [];
-let imgPlanet;
+
 
 
 
@@ -12,7 +12,7 @@ let planetMaxWidth = 120;
 let resetZone = 500;
 
 let planetArea = (1000+2*resetZone)/8;
-let planetSpeed = 2;
+let planetSpeed = 1;
 
 class Planet {
   constructor(tempX){

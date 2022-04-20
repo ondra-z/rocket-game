@@ -43,11 +43,13 @@ setup = () => {//----------------SETUP-----------------------------
   noStroke();
 
   for(let i = 0; i <cloudNum; i++){
-    clouds[i] = new Cloud((width+resetZone*2)/cloudNum*i);
-  }
-
-  for(let i = 0; i <cloudNum; i++){
     planets[i] = new Planet((width+resetZone*2)/planetNum*i);
+  }
+  for(let i = 0; i <ellipseNum; i++){
+    ellipses[i] = new Ellipse((width+resetZone*2)/ellipseNum*i);
+  }
+  for(let i = 0; i <cloudNum; i++){
+    clouds[i] = new Cloud((width+resetZone*2)/cloudNum*i);
   }
 }
 function startJump(){
@@ -69,26 +71,7 @@ function setCanvasScale(){
     print("mobile");
   }
 }
-function setGradient(x, y, w, h, c1, c2, axis) {
-  noFill();
-  if (axis === Y_AXIS) {
-    // Top to bottom gradient
-    for (let i = y; i <= y + h; i++) {
-      let inter = map(i, y, y + h, 0, 1);
-      let c = lerpColor(c1, c2, inter);
-      stroke(c);
-      line(x, i, x + w, i);
-    }
-  } else if (axis === X_AXIS) {
-    // Left to right gradient
-    for (let i = x; i <= x + w; i++) {
-      let inter = map(i, x, x + w, 0, 1);
-      let c = lerpColor(c1, c2, inter);
-      stroke(c);
-      line(i, y, i, y + h);
-    }
-  }
-}
+
 var truncateFloat = function(value, precision) {
     // Ensure the multiplier is a float
     var pMult = 1.0;
@@ -127,6 +110,13 @@ function drawBackground(){
     planets[i].display();
     if (gameMode==1){
       planets[i].move();
+    }
+  } 
+
+  for(let i = 0; i <ellipseNum; i++){
+    ellipses[i].display();
+    if (gameMode==1){
+      ellipses[i].move();
     }
   } 
   

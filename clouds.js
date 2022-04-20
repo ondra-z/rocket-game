@@ -11,7 +11,7 @@ let cloudMaxWidth = 120;
 
 
 let cloudArea = ((1000+2*resetZone)/8);
-let cloudSpeed = 3;
+let cloudSpeed = 2;
 
 class Cloud {
   constructor(tempX){

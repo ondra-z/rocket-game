@@ -1,5 +1,5 @@
 //ellipse objects
-let ellipseNum = 10;
+let ellipseNum = 4;
 let ellipses = [];
 
 preload = () => {        
@@ -7,8 +7,8 @@ preload = () => {
 }
 
 //ellipse variables
-let ellipseMinWidth = 60;
-let ellipseMaxWidth = 120;
+let ellipseMinWidth = 150;
+let ellipseMaxWidth = 450;
 
 
 let ellipseArea = (1000+2*resetZone)/8;
@@ -39,7 +39,7 @@ class Ellipse {
     this.width = random(ellipseMinWidth, ellipseMaxWidth);
     this.height = this.width/3;
 
-    this.y = random(200,400);
+    this.y = height-20;
   }
 
   display(){
