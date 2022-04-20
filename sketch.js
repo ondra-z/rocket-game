@@ -17,25 +17,23 @@ let columnSpeed = 4;
 
 //gradient
 const Y_AXIS = 1;
-let b1 = color(32,106,129);
-let b2 = color(29,2,74);
+let b1;
+let b2;
 
 //game proportions
 let gap = 150;//gap opening in column
 let margin = 100; //how close the gap can be to bottom of top of the canvas
 
 preload = () => {        
+  imgBg = loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/62605cad03c837a5a054ecc3_Background.svg');
   imgRocket =  loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eb66b615304579022b97f_G_Rocket.svg');
   imgRocketFire = loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eb66cf5bcfa650326fa68_G_Rocket_fire.svg');
   imgColumn = loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eb8d503bfba83741b7337_Column.png')
   
-  imgPlanet = loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eceb5970227174a28ac8f_Cloud.svg');
-  imgAsteroids = loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eceb5970227174a28ac8f_Cloud.svg');
-  imgBtmEllipse = loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625ecd6846551d10f20fac16_Bottom_Ellipse.svg');
-  imgCloud = loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eceb5970227174a28ac8f_Cloud.svg');
-}
+  }
 setup = () => {//----------------SETUP-----------------------------
-  
+  b1 = color(32,106,129);
+  b2 = color(29,2,74);
   //createCanvas(windowWidth-100, windowHeight-100);
   setCanvasScale();
   createCanvas(500 * scale , 300 * scale);
@@ -47,6 +45,10 @@ setup = () => {//----------------SETUP-----------------------------
   for(let i = 0; i <cloudNum; i++){
     clouds[i] = new Cloud((width+resetZone*2)/cloudNum*i);
   }
+
+  // for(let i = 0; i <cloudNum; i++){
+  //   planets[i] = new Planet((width+resetZone*2)/planetNum*i);
+  // }
 }
 function startJump(){
   OGbirdYcor = birdYcor;
@@ -121,9 +123,20 @@ function restartGame(){
   }
 }
 function drawBackground(){
+  // for(let i = 0; i <planetNum; i++){
+  //   planets[i].display();
+  //   if (gameMode==1){
+  //     planets[i].move();
+  //   }
+    
+  // } 
+  
   for(let i = 0; i <cloudNum; i++){
     clouds[i].display();
-    clouds[i].move();
+    if (gameMode==1){
+      clouds[i].move();
+    }
+    
   } 
 }
 function drawColumns(){
@@ -210,8 +223,7 @@ function windowResized() {
 
 
 draw = () => {
-  background("#B7C8CC");
-  setGradient(0, 0, width , height, b1, b2, Y_AXIS);
+  image(imgBg, 0, 0, width, height);
   drawBackground();
   drawColumns();
   
@@ -219,7 +231,7 @@ draw = () => {
   if(gameMode == 2){
     textAlign(CENTER);
     textSize(30);
-    text("Flappy bird by Ondrej Zajic", width/2, height/2-10);
+    text("Rocket Game by Ondrej Zajic", width/2, height/2-10);
     textSize(16);
     text("Press SPACE to restart the game", width/2, height/2 + 30);
   //-------------------------------GAME MODE 1 = playing----------------------------
