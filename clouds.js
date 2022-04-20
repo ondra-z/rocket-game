@@ -2,14 +2,12 @@
 let cloudNum = 10;
 let clouds = [];
 
-preload = () => {        
- imgCloud = loadImage('https://uploads-ssl.webflow.com/5feb37a08d2817321dc9c524/625eceb5970227174a28ac8f_Cloud.svg');
-}
+
 
 //cloud variables
 let cloudMinWidth = 60;
 let cloudMaxWidth = 120;
-let resetZone = 500;
+
 
 
 let cloudArea = ((1000+2*resetZone)/8);

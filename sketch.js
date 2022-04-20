@@ -46,9 +46,9 @@ setup = () => {//----------------SETUP-----------------------------
     clouds[i] = new Cloud((width+resetZone*2)/cloudNum*i);
   }
 
-  // for(let i = 0; i <cloudNum; i++){
-  //   planets[i] = new Planet((width+resetZone*2)/planetNum*i);
-  // }
+  for(let i = 0; i <cloudNum; i++){
+    planets[i] = new Planet((width+resetZone*2)/planetNum*i);
+  }
 }
 function startJump(){
   OGbirdYcor = birdYcor;
@@ -123,20 +123,18 @@ function restartGame(){
   }
 }
 function drawBackground(){
-  // for(let i = 0; i <planetNum; i++){
-  //   planets[i].display();
-  //   if (gameMode==1){
-  //     planets[i].move();
-  //   }
-    
-  // } 
+  for(let i = 0; i <planetNum; i++){
+    planets[i].display();
+    if (gameMode==1){
+      planets[i].move();
+    }
+  } 
   
   for(let i = 0; i <cloudNum; i++){
     clouds[i].display();
     if (gameMode==1){
       clouds[i].move();
     }
-    
   } 
 }
 function drawColumns(){
