@@ -45,6 +45,10 @@ const s = ( sketch ) => {
     restartGame();
     sketch.frameRate(30);
     sketch.noStroke();
+
+    for(let i = 0; i <cloudNum; i++){
+      clouds[i] = new Cloud((sketch.width+resetZone*2)/cloudNum*i);
+    }
   }
   function startJump(){
     OGbirdYcor = birdYcor;
@@ -119,11 +123,12 @@ const s = ( sketch ) => {
     }
   }
   function drawBackground(){
-    for(var i=0; i <3; i++){
-      sketch.image(imgCloud, colXcor[i]+100, 500, 80, 30);
-    }
-    
-  }
+    for(let i = 0; i <cloudNum; i++){
+      clouds[i].display();
+      clouds[i].move();
+    } 
+  }let cloudNum = 10;
+let clouds = [];
   function drawColumns(){
     for(var i=0; i <3; i++){
       sketch.fill("#000");
