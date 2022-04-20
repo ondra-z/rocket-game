@@ -30,6 +30,7 @@ class Ellipse {
     //reset ellipses from left of canvas to the right to start over
     if(this.x < -resetZone){
       this.x = width + resetZone;
+      this.resetPosition();
     }
   }
 

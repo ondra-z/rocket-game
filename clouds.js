@@ -29,6 +29,7 @@ class Cloud {
     //reset clouds from left of canvas to the right to start over
     if(this.x < -resetZone){
       this.x = width + resetZone;
+      this.resetPosition();
     }
   }
 

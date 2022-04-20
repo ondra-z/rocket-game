@@ -35,8 +35,8 @@ setup = () => {//----------------SETUP-----------------------------
   b1 = color(32,106,129);
   b2 = color(29,2,74);
   //createCanvas(windowWidth-100, windowHeight-100);
-  setCanvasScale();
-  createCanvas(500 * scale , 300 * scale);
+  
+  createCanvas(1000 , 600);
   //fullscreen();
   restartGame();
   frameRate(30);
@@ -61,15 +61,6 @@ function jump(){
   birdYcor = OGbirdYcor  - sin(jumpTime/5)*86;
   
   jumpTime ++;
-}
-function setCanvasScale(){
-  if(windowWidth >700){
-    scale = 2;
-    print("desktop");
-  }else{
-    scale = 1;
-    print("mobile");
-  }
 }
 
 var truncateFloat = function(value, precision) {

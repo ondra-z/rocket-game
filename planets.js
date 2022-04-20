@@ -9,7 +9,7 @@ let planets = [];
 //planet variables
 let planetMinWidth = 60;
 let planetMaxWidth = 120;
-let resetZone = 500;
+let resetZone = 600;
 
 let planetArea = (1000+2*resetZone)/8;
 let planetSpeed = 1;
@@ -30,6 +30,7 @@ class Planet {
     //reset planets from left of canvas to the right to start over
     if(this.x < -resetZone){
       this.x = width + resetZone;
+      this.resetPosition();
     }
   }
 
@@ -39,7 +40,7 @@ class Planet {
     this.width = random(planetMinWidth, planetMaxWidth);
     this.height = this.width/1.5;
 
-    this.y = random(50,150);
+    this.y = random(20,150);
   }
 
   display(){
